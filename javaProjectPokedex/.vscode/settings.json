@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/mtraore/Desktop/test kata/kata 3/session-katas-3-ella-paris-25-10-2024-mouskit2/json-simple-1.1.jar"
+    ]
+}

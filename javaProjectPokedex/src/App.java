@@ -1,4 +1,5 @@
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -13,7 +14,10 @@ public class App {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        Pokemon  pokemon[];
+        List<Pokemon> pokemon = new ArrayList<>();
+        int     numberOfPokemon;
+
+        numberOfPokemon = 0;
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser.parse(new FileReader("src/data/pokedex.json"));
@@ -28,8 +32,11 @@ public class App {
 
                 JSONObject pokemonData = iterator.next();
                 Pokemon newPokemon = new Pokemon(pokemonData);
+                pokemon.add(newPokemon);
+                numberOfPokemon++;
                 System.out.println(newPokemon);
             }
+            System.out.println("il y a " + numberOfPokemon + " pokemon dans la liste");
 
         } catch (Exception e) {
             e.printStackTrace();
